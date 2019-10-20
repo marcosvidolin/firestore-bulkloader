@@ -1,0 +1,14 @@
+{
+  "name": "bulkloader",
+  "version": "1.0.0",
+  "description": "bulkloader app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marcos A. Vidolin de Lima <marcosvidolin@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "firestore-bulk-loader": "^1.0.2"
+  }
+}
