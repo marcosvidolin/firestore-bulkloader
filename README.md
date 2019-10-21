@@ -1,2 +1,9 @@
-# firestore-bulkloader
-A Docker image to help you to load data to Google Cloudt Firestore
+# firestorebl
+
+A command-line tool to help you to load data to Google Cloud Firestore.
+
+Default collection name
+
+```shell
+bulkloader_1571683311550
+```

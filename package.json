@@ -1,14 +1,15 @@
 {
-  "name": "bulkloader",
+  "name": "firestorebl",
   "version": "1.0.0",
-  "description": "bulkloader app",
-  "main": "index.js",
+  "description": "A command-line tool to help you to load data to Google Cloud Firestore.",
+  "main": "loader.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Marcos A. Vidolin de Lima <marcosvidolin@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "commander": "^3.0.2",
     "firestore-bulk-loader": "^1.0.2"
   }
 }
