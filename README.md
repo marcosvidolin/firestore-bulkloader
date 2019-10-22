@@ -1,5 +1,7 @@
 # firestorebl
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c6a6f350dcd8416ebd083bde565f5270)](https://www.codacy.com/manual/marcosvidolin/firestorebl?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=marcosvidolin/firestorebl&amp;utm_campaign=Badge_Grade) [![Build Status](https://travis-ci.org/marcosvidolin/firestorebl.svg?branch=master)](https://travis-ci.org/marcosvidolin/firestorebl)
+
 A command-line tool to help you to load data to Google Cloud Firestore.
 
 ## How to install
