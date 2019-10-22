@@ -1,13 +1,24 @@
 {
   "name": "firestorebl",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A command-line tool to help you to load data to Google Cloud Firestore.",
   "main": "loader.js",
+  "bin": "./loader.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Marcos A. Vidolin de Lima <marcosvidolin@gmail.com>",
   "license": "MIT",
+  "keywords": [
+    "cloud-firestore",
+    "google",
+    "google-cloud",
+    "firebase",
+    "command-line-tool",
+    "bulkloader",
+    "loader",
+    "bulk"
+  ],
   "dependencies": {
     "commander": "^3.0.2",
     "firestore-bulk-loader": "^1.0.2"
