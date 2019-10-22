@@ -38,12 +38,12 @@ const loadData = (dataPath, collectionName, serviceAccountPath, documentKey) => 
 }
 
 program
-    .version('1.0.0')
+    .version('1.0.3')
     .description('A command-line tool to help you to load data to Google Cloud Firestore.')
-    .option('-c, --collection <value>', 'The collection name.')
-    .option('-f, --file <value>', 'The file to be imported.')
-    .option('-i, --id <value>', 'Attribute name to use as a document ID.')
-    .option('-s, --secret <value>', 'The service account file (JSON).')
+    .option('-c, --collection <value>', 'the collection name')
+    .option('-f, --file <value>', 'the file to be imported')
+    .option('-i, --id <value>', 'attribute name to use as a document ID')
+    .option('-s, --secret <value>', 'the service account file (JSON)')
     .action(() => {
         checkOptions(program);
         loadData(program.file, program.collection, program.secret, program.id);
@@ -54,8 +54,8 @@ program
 program.on('--help', () => {
     console.log('')
     console.log('Examples:');
-    console.log('  $ -f ./path/to/data.json -s ./path/to/service-account.json');
-    console.log('  $ --file ./path/to/data.json --secret ./path/to/service-account.json --id example_id');
+    console.log('  $firestorebl -f ./path/to/data.json -s ./path/to/service-account.json');
+    console.log('  $firestorebl --file ./path/to/data.json --secret ./path/to/service-account.json --id example_id');
 });
 
 program.parse(process.argv);
