@@ -51,7 +51,6 @@ program
 
 // must be before .parse() since
 // node's emit() is immediate
-// TODO: examples
 program.on('--help', () => {
     console.log('')
     console.log('Examples:');
