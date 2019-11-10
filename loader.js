@@ -4,6 +4,7 @@
 
 const bulkLoader = require('firestore-bulk-loader');
 const program = require('commander');
+const path = require('path');
 
 /**
  * Checks all the required options.
@@ -19,6 +20,17 @@ const checkOptions = (options) => {
 }
 
 /**
+ * Checks the file.
+ * @param {*} filePath 
+ */
+const checkFile = (filePath) => {
+    const extname = path.extname(filePath).toLowerCase();
+    if (extname !== '.json' || extname !== '.csv') {
+        throw new Error('Invalid file extension. Try JSON ou CSV files.');
+    }
+};
+
+/**
  * Loads all data to the Cloud Firestore.
  * @param {*} data 
  * @param {*} collectionName 
@@ -31,6 +43,7 @@ const loadData = (dataPath, collectionName, serviceAccountPath, documentKey) => 
         options.documentKeyProperty = documentKey;
     }
     const data = require(dataPath);
+    checkFile(dataPath);
     const serviceAccount = require(serviceAccountPath);
     const collection = collectionName || 'bulkloader_' + new Date().getTime();
 
@@ -55,6 +68,7 @@ program.on('--help', () => {
     console.log('')
     console.log('Examples:');
     console.log('  $firestorebl -f ./path/to/data.json -s ./path/to/service-account.json');
+    console.log('  $firestorebl -f ./path/to/data.csv -s ./path/to/service-account.json');
     console.log('  $firestorebl --file ./path/to/data.json --secret ./path/to/service-account.json --id example_id');
 });
 
