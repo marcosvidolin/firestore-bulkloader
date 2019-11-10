@@ -25,7 +25,7 @@ const checkOptions = (options) => {
  */
 const checkFile = (filePath) => {
     const extname = path.extname(filePath).toLowerCase();
-    if (extname !== '.json' || extname !== '.csv') {
+    if (extname !== '.json' && extname !== '.csv') {
         throw new Error('Invalid file extension. Try JSON ou CSV files.');
     }
 };
