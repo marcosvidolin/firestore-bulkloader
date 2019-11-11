@@ -1,6 +1,6 @@
 {
   "name": "firestorebl",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "A command-line tool to help you to load data to Google Cloud Firestore.",
   "main": "loader.js",
   "bin": "./loader.js",
