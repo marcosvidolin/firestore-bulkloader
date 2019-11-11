@@ -26,8 +26,16 @@ firestorebl --help
 
 **How to load data to Firestore**
 
+JSON files
+
 ```bash
 firestorebl -f ./path/to/data.json -s ./path/to/service-account.json
+```
+
+or CSV files (delimiter ",")
+
+```bash
+firestorebl -f ./path/to/data.csv -s ./path/to/service-account.json
 ```
 
 ## Parameters

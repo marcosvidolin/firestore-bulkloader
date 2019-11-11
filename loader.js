@@ -4,6 +4,7 @@
 
 const bulkLoader = require('firestore-bulk-loader');
 const program = require('commander');
+const fileUtil = require('./file-util');
 
 /**
  * Checks all the required options.
@@ -30,11 +31,15 @@ const loadData = (dataPath, collectionName, serviceAccountPath, documentKey) => 
     if (documentKey !== undefined) {
         options.documentKeyProperty = documentKey;
     }
-    const data = require(dataPath);
+    
+    options.csv = fileUtil.isCsv(dataPath);
+
+    const data = fileUtil.readFile(dataPath);
     const serviceAccount = require(serviceAccountPath);
     const collection = collectionName || 'bulkloader_' + new Date().getTime();
 
     bulkLoader.load(data, collection, serviceAccount, options);
+    console.log(`Collection "${collection}" created.`);
 }
 
 program
@@ -55,6 +60,7 @@ program.on('--help', () => {
     console.log('')
     console.log('Examples:');
     console.log('  $firestorebl -f ./path/to/data.json -s ./path/to/service-account.json');
+    console.log('  $firestorebl -f ./path/to/data.csv -s ./path/to/service-account.json');
     console.log('  $firestorebl --file ./path/to/data.json --secret ./path/to/service-account.json --id example_id');
 });
 
