@@ -35,7 +35,7 @@ const loadData = (dataPath, collectionName, serviceAccountPath, documentKey) => 
     options.csv = fileUtil.isCsv(dataPath);
 
     const data = fileUtil.readFile(dataPath);
-    const serviceAccount = require(serviceAccountPath);
+    const serviceAccount = fileUtil.readFile(serviceAccountPath);
     const collection = collectionName || 'bulkloader_' + new Date().getTime();
 
     bulkLoader.load(data, collection, serviceAccount, options);
@@ -43,7 +43,7 @@ const loadData = (dataPath, collectionName, serviceAccountPath, documentKey) => 
 }
 
 program
-    .version('1.0.3')
+    .version('1.1.1')
     .description('A command-line tool to help you to load data to Google Cloud Firestore.')
     .option('-c, --collection <value>', 'the collection name')
     .option('-f, --file <value>', 'the file to be imported')
